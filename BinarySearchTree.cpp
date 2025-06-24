@@ -11,7 +11,7 @@ public:
   // Construktor for the Node class
   Node()
   {
-    leftchild = nullptr; // Initialize left child to null
+    leftchild = nullptr;  // Initialize left child to null
     rightchild = nullptr; // Initialize right child to null
   }
 };
@@ -62,7 +62,7 @@ public:
     {
       // 6a: Make the left child of the parent point to the new node
       parent->leftchild = newNode;
-      
+
       // 6b: exit
       return;
     }
@@ -71,8 +71,8 @@ public:
     {
       // 7a: Make the right child of parent point to the new node
       parent->rightchild = newNode;
-      
-      // 7b: exit 
+
+      // 7b: exit
       return;
     }
   }
@@ -85,7 +85,7 @@ public:
     while ((currentNode != nullptr) && (currentNode->info != element))
     {
       parent = currentNode;
-      if (element <currentNode->info)
+      if (element < currentNode->info)
         currentNode = currentNode->leftchild;
       else
         currentNode = currentNode->rightchild;
@@ -101,12 +101,12 @@ public:
     }
     if (ptr == nullptr)
       return;
-    
-      inorder(ptr->leftchild);
-      cout << ptr->info;
-      inorder(ptr->rightchild);
+
+    inorder(ptr->leftchild);
+    cout << ptr->info;
+    inorder(ptr->rightchild);
   }
-  
+
   void preorder(Node *ptr)
   {
     if (isEmpty())
@@ -116,10 +116,10 @@ public:
     }
     if (ptr == nullptr)
       return;
-    
-      cout << ptr->info;
-      preorder(ptr->leftchild);
-      preorder(ptr->rightchild);
+
+    cout << ptr->info;
+    preorder(ptr->leftchild);
+    preorder(ptr->rightchild);
   }
 
   void postorder(Node *ptr)
@@ -131,10 +131,10 @@ public:
     }
     if (ptr == nullptr)
       return;
-    
-      postorder(ptr->leftchild);
-      postorder(ptr->rightchild);
-      cout << ptr->info;
+
+    postorder(ptr->leftchild);
+    postorder(ptr->rightchild);
+    cout << ptr->info;
   }
 
   bool isEmpty()
@@ -146,5 +146,15 @@ public:
 
 int main()
 {
-
+  BinaryTree x;
+  while (true)
+  {
+    cout << "\nMenu" << endl;
+    cout << "1. Implement insert operation" << endl;
+    cout << "2. Perform inorder traversal" << endl;
+    cout << "3. Perform preorder traversal" << endl;
+    cout << "4. Perform postorder traversal" << endl;
+    cout << "5. Exit" << endl;
+    cout << "\nEnter your choice (1-5) : ";
+  }
 }
